@@ -32,13 +32,13 @@
         }
 
         a {
-            color: var(--secondary-color); /* Usamos el secondary para enlaces generales */
+            color: var(--secondary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--primary-color); /* Azul oscuro al pasar el ratón */
+            color: var(--primary-color);
         }
 
         h1, h2, h3 {
@@ -65,6 +65,12 @@
             font-size: 2.5em;
             font-weight: 700;
             color: var(--primary-color);
+        }
+
+        header .subtitle {
+            font-size: 1.1em;
+            color: var(--secondary-color);
+            margin-top: 5px;
         }
 
         nav ul {
@@ -204,7 +210,7 @@
             gap: 10px;
         }
         .project-card h3 img {
-            height: 30px; /* Ajusta el tamaño de los iconos de los títulos de proyectos */
+            height: 30px;
         }
 
         .project-card .tech-list {
@@ -257,15 +263,15 @@
         footer .social-links a {
             color: white;
             margin: 0 10px;
-            font-size: 1.5em; /* Ajusta este valor si los iconos son muy grandes/pequeños */
+            font-size: 1.5em;
             transition: color 0.3s ease;
         }
         footer .social-links a:hover {
-            color: var(--accent-color); /* El color de acento al pasar el ratón */
+            color: var(--accent-color);
         }
 
         footer .social-links img {
-            height: 30px; /* Tamaño fijo para los iconos SVG en el footer */
+            height: 30px;
             width: 30px;
             vertical-align: middle;
         }
@@ -279,7 +285,7 @@
             .hero p { font-size: 1.2em; }
             nav ul li { margin: 0 8px; }
             .project-card .project-images {
-                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+                grid-template-columns: 1fr;
             }
         }
 
@@ -301,6 +307,7 @@
     <header>
         <div class="container">
             <div class="logo">Juan Pablo Cano</div>
+            <div class="subtitle">Data Analyst | Machine Learning Enthusiast</div>
             <nav>
                 <ul>
                     <li><a href="#home">Inicio</a></li>
@@ -315,8 +322,8 @@
 
     <section id="home" class="hero">
         <div class="container">
-            <h1>Data Analyst & Machine Learning Enthusiast</h1>
-            <p>¡Convirtiendo datos en decisiones de negocio y soluciones inteligentes!</p>
+            <h1>Convirtiendo Datos en Estrategia y Valor</h1>
+            <p>Impulsando decisiones de negocio a través de insights accionables y soluciones inteligentes.</p>
             <a href="#projects" class="btn">Explorar Proyectos</a>
         </div>
     </section>
@@ -325,7 +332,7 @@
         <h2>Sobre Mí</h2>
         <div class="about-me">
             <div class="profile-pic">
-                <img src="img/profile.jpg" alt="Juan Pablo Cano">
+                <img src="images/profile.jpg" alt="Juan Pablo Cano">
             </div>
             <div class="bio-text">
                 <p>Soy un Ingeniero Industrial apasionado por el análisis de datos, enfocado en impulsar decisiones de negocio a través de insights. Con sólida experiencia en Python, Power BI, SQL y Tableau, mi interés se centra en la narración de datos y la automatización.</p>
@@ -382,19 +389,33 @@
             <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Jupyter Notebook, Análisis Estadístico.</p>
 
             <div class="project-images">
-                <img src="img/projects/churn-prediction/1.png" alt="Contract Type vs. Retention">
-                <img src="img/projects/churn-prediction/3.png" alt="Weekly Visits Distribution">
-                <img src="img/projects/churn-prediction/4.png" alt="Correlation Heatmap">
-                <img src="img/projects/churn-prediction/2.png" alt="Tenure vs. Retention">
-                <img src="img/projects/churn-prediction/5.png" alt="ROC Curve - Random Forest">
-                <img src="img/projects/churn-prediction/6.png" alt="Confusion Matrix - Random Forest">
-                <img src="img/projects/churn-prediction/7.png" alt="Dendrogram - User Clusters">
+                <img src="images/1.png" alt="Contract Type vs. Retention">
+                <img src="images/3.png" alt="Weekly Visits Distribution">
+                <img src="images/4.png" alt="Correlation Heatmap">
+                <img src="images/2.png" alt="Tenure vs. Retention">
+                <img src="images/5.png" alt="ROC Curve - Random Forest">
+                <img src="images/6.png" alt="Confusion Matrix - Random Forest">
+                <img src="images/7.png" alt="Dendrogram - User Clusters">
             </div>
 
             <p>Resultados Clave: El modelo Random Forest alcanzó una **precisión del 91%**, con un **recall del 81.3%** y una **precisión del 83.8%**. El AUC-ROC fue de **0.97**, indicando una excelente discriminación y una fuerte capacidad para identificar usuarios propensos a la baja, lo que permite estrategias de fidelización más efectivas. Se identificaron factores clave que predicen la retención de clientes y el modelo puede implementarse para señalar posibles cancelaciones futuras.</p>
 
             <a href="https://github.com/Juancanoanalyst/Gym-User-Churn-Prediction" target="_blank" class="btn-project">Ver Repositorio</a>
             </div>
+
+        <div class="project-card">
+            <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> Análisis de Datos de Telecomunicaciones</h3>
+            <p>Este proyecto se enfoca en el análisis exhaustivo de datos de telecomunicaciones para extraer insights valiosos y fundamentar la toma de decisiones estratégicas. A través de la manipulación y el análisis de los datos, buscamos optimizar operaciones, identificar áreas de mejora y potenciar el rendimiento general de los servicios de telecomunicaciones.</p>
+            <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Jupyter Notebook, Análisis Estadístico.</p>
+
+            <div class="project-images">
+                <img src="images/distribucion_operadores.png" alt="Distribución de Operadores Ineficaces">
+            </div>
+
+            <p>Resultados Clave: Se logró un preprocesamiento efectivo de los datos, asegurando la calidad del análisis. La función `identificar_operadores_a_deshabilitar` permite una evaluación objetiva del rendimiento y tiene la capacidad de identificar operadores ineficaces, siendo adaptable a diferentes umbrales de ineficacia. Los gráficos facilitan la interpretación de los resultados y se genera un dataset limpio para uso posterior.</p>
+
+            <a href="https://github.com/Juancanoanalyst/Telecom-Data-Analysis" target="_blank" class="btn-project">Ver Repositorio</a>
+        </div>
 
         <div class="project-card">
             <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> A/A Test for Food Products</h3>
