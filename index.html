@@ -1,476 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Pablo Cano - Analista de Datos & Machine Learning</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos Generales */
-        :root {
-            --primary-color: #1E3A5F; /* Azul marino profundo */
-            --secondary-color: #0056b3; /* Azul para enlaces y detalles */
-            --background-light: #F8F8F8; /* Fondo muy claro */
-            --text-dark: #333333; /* Texto oscuro */
-            --accent-color: #007BFF; /* Azul vibrante para acento */
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            scroll-behavior: smooth; /* Desplazamiento suave */
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--primary-color);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        h1 { font-size: 2.8em; text-align: center; margin-bottom: 10px; }
-        h2 { font-size: 2.2em; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-top: 40px; }
-        h3 { font-size: 1.8em; color: var(--text-dark); margin-top: 30px;}
-
-        /* Header (Encabezado) */
-        header {
-            background-color: #ffffff;
-            padding: 20px 0;
-            border-bottom: 1px solid #e2e6ea;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        header .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        header .subtitle {
-            font-size: 1.1em;
-            color: var(--secondary-color);
-            margin-top: 5px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0 0 0;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            font-weight: 700;
-            color: var(--text-dark);
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Sección Héroe (Bienvenida) */
-        .hero {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 30px;
-        }
-
-        .hero h1 {
-            color: white;
-            font-size: 3.5em;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-        }
-
-        .hero .btn {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: 700;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero .btn:hover {
-            background-color: var(--secondary-color);
-        }
-
-        /* Sección Sobre Mí */
-        .about-me {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .about-me .profile-pic {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-        }
-
-        .about-me .profile-pic img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary-color);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .about-me .bio-text {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        /* Sección Habilidades */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .skill-item {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-            transition: transform 0.2s ease;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-item img {
-            max-width: 60px;
-            margin-bottom: 10px;
-        }
-
-        .skill-item p {
-            font-weight: 600;
-            margin: 0;
-            color: var(--primary-color);
-        }
-
-        /* Sección Proyectos */
-        .project-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            padding: 25px;
-            transition: transform 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .project-card h3 img {
-            height: 30px;
-        }
-
-        .project-card .tech-list {
-            font-size: 0.9em;
-            color: var(--secondary-color);
-            margin-top: 10px;
-        }
-
-        .project-card .project-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .project-card .project-images img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .project-card .btn-project {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            display: inline-block;
-            margin-right: 15px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-        .project-card .btn-project:hover {
-            background-color: var(--secondary-color);
-        }
-
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-            background-color: var(--text-dark);
-            color: white;
-            font-size: 0.9em;
-        }
-
-        footer .social-links a {
-            color: white;
-            margin: 0 10px;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-        footer .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        footer .social-links img {
-            height: 30px;
-            width: 30px;
-            vertical-align: middle;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2em; }
-            h2 { font-size: 1.8em; }
-            .hero { padding: 60px 20px; }
-            .hero h1 { font-size: 2.8em; }
-            .hero p { font-size: 1.2em; }
-            nav ul li { margin: 0 8px; }
-            .project-card .project-images {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container { padding: 15px; }
-            h1 { font-size: 1.8em; }
-            h2 { font-size: 1.5em; }
-            .hero { padding: 40px 15px; }
-            .hero h1 { font-size: 2.2em; }
-            .hero p { font-size: 1em; }
-            nav ul li { display: block; margin: 10px 0; }
-            .about-me { flex-direction: column; text-align: center; }
-            .about-me .profile-pic { margin-bottom: 20px; }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Cano - Data Analyst Portfolio</title>
+  <meta name="description" content="Portafolio profesional de Juan Cano – Analista de Datos. Proyectos con Python, SQL, Power BI y más.">
+  <meta property="og:title" content="Juan Cano – Portafolio Data Analyst">
+  <meta property="og:description" content="Explora mis proyectos de análisis de datos, machine learning y visualización con herramientas modernas.">
+  <meta property="og:image" content="img/profile.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; background-color: #f8f8f8; color: #333; }
+    header, footer, section { max-width: 1000px; margin: auto; padding: 20px; }
+    header { text-align: center; background: #fff; border-bottom: 1px solid #ccc; }
+    header h1 { color: #1E3A5F; font-family: 'Montserrat'; font-size: 2.5em; }
+    nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; }
+    nav a { text-decoration: none; color: #333; font-weight: bold; }
+    .hero { text-align: center; padding: 60px 20px; background: #1E3A5F; color: #fff; }
+    .hero h2 { font-size: 2em; }
+    .hero p { font-size: 1.2em; margin: 10px 0; }
+    .about-me img { width: 200px; border-radius: 50%; margin: 20px auto; display: block; }
+    .skills, .projects, .contact { background: #fff; margin: 20px 0; padding: 20px; border-radius: 8px; }
+    .badges img { margin: 5px; height: 30px; }
+    footer { text-align: center; background: #333; color: #fff; padding: 10px; }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">Juan Pablo Cano</div>
-            <div class="subtitle">Data Analyst | Machine Learning Enthusiast</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <h1>Juan Pablo Cano</h1>
+    <p>Data Analyst | Machine Learning Enthusiast</p>
+    <nav>
+      <ul>
+        <li><a href="#about">Sobre Mí</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Convirtiendo datos en estrategias</h1>
-            <p>Impulsando decisiones de negocio a través de insights accionables y soluciones inteligentes.</p>
-            <a href="#projects" class="btn">Explorar Proyectos</a>
-        </div>
-    </section>
+  <section class="hero">
+    <h2>Transformo datos en decisiones</h2>
+    <p>Analista de datos con enfoque en negocio, visualización y machine learning</p>
+    <p><strong>Busco aportar en proyectos industriales, fintech o e-commerce</strong></p>
+  </section>
 
-    <section id="about" class="container">
-        <h2>Sobre Mí</h2>
-        <div class="about-me">
-            <div class="profile-pic">
-                <img src="img/profile.jpeg" alt="Juan Pablo Cano">
-            </div>
-            <div class="bio-text">
-                <p>Soy un Ingeniero Industrial apasionado por el análisis de datos, enfocado en impulsar decisiones de negocio a través de insights. Con sólida experiencia en Python, Power BI, SQL y Tableau, mi interés se centra en la narración de datos y la automatización.</p>
-                <p>Actualmente resido en Bogotá, Colombia, y estoy abierto a oportunidades remotas. Me encuentro trabajando en proyectos personales que involucran machine learning, desarrollo de dashboards y análisis de negocio.</p>
-                <p>Mi filosofía es: "Transformo datos en decisiones". Creo firmemente en el poder de los datos para respaldar y transformar organizaciones.</p>
-            </div>
-        </div>
-    </section>
+  <section id="about" class="about-me">
+    <h2>Sobre Mí</h2>
+    <img src="img/profile.jpeg" alt="Juan Pablo Cano">
+    <p>Ingeniero Industrial certificado como analista de datos, con experiencia en procesos industriales y formación en Python, SQL, Excel y Power BI. Me apasiona resolver problemas reales y generar impacto desde los datos.</p>
+    <p>Actualmente estudio Machine Learning, y estoy enfocado en sectores donde el análisis tenga impacto real. Soy autodidacta, curioso y comprometido.</p>
+  </section>
 
-    <section id="skills" class="container">
-        <h2>Habilidades</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                <p>Python</p>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL">
-                <p>SQL (PostgreSQL)</p>
-            </div>
-            <div class="skill-item">
-                <img src="img/powerbi.svg" alt="Power BI">
-                <p>Power BI</p>
-            </div>
-            <div class="skill-item">
-                <img src="img/tableau.svg" alt="Tableau">
-                <p>Tableau</p>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                <p>Git & GitHub</p>
-            </div>
-            <div class="skill-item">
-                <img src="img/excel.svg" alt="Excel">
-                <p>Excel</p>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
-                <p>Jupyter Notebooks</p>
-            </div>
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="Machine Learning">
-                <p>Machine Learning</p>
-            </div>
-        </div>
-    </section>
+  <section id="skills" class="skills">
+    <h2>Habilidades</h2>
+    <div class="badges">
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+      <img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
+      <img src="https://img.shields.io/badge/PowerBI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI">
+      <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel">
+      <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white" alt="Tableau">
+      <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter">
+    </div>
+  </section>
 
-    <section id="projects" class="container">
-        <h2>Proyectos Destacados</h2>
+  <section id="projects" class="projects">
+    <h2>Proyectos Destacados</h2>
+    <ul>
+      <li><strong>Análisis de datos E-commerce</strong>: comportamiento de usuarios, métricas CAC, LTV y conversiones [<a href="https://github.com/Juancanoanalyst/E-commerce-Data-Analysis">Ver repositorio</a>]</li>
+      <li><strong>Predicción de churn en gimnasio</strong>: clasificación con Random Forest [<a href="https://github.com/Juancanoanalyst/Gym-User-Churn-Prediction">Ver repositorio</a>]</li>
+      <li><strong>Análisis de datos Telecom</strong>: limpieza, visualización, métricas de desempeño [<a href="https://github.com/Juancanoanalyst/Telecom-Data-Analysis">Ver repositorio</a>]</li>
+    </ul>
+  </section>
 
-        <div class="project-card">
-            <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> Análisis de Datos de Plataforma de E-commerce</h3>
-            <p>Este proyecto analiza el comportamiento de los usuarios en una plataforma de comercio electrónico. Evalúa el flujo de navegación, las órdenes de compra y los costos por fuente de adquisición para generar métricas clave y fundamentar decisiones estratégicas.</p>
-            <p>Se implementan procesos de limpieza de datos (fechas, columnas, duplicados), enriquecimiento temporal (día, semana, mes), y cálculo de métricas de negocio como CAC (Costo de Adquisición de Cliente), tasa de conversión e ingresos mensuales.</p>
-            <p class="tech-list">Tecnologías: Python (Pandas, Matplotlib, Seaborn, NumPy, SciPy), Jupyter Notebook.</p>
+  <section class="contact" id="contact">
+    <h2>Contacto</h2>
+    <p>Email: <a href="mailto:jpcano983@gmail.com">jpcano983@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank">Ver perfil</a></p>
+    <p>GitHub: <a href="https://github.com/Juancanoanalyst" target="_blank">Ver perfil</a></p>
+    <p><a href="cv/Juan_Cano_CV.pdf" download>Descargar mi CV</a></p>
+  </section>
 
-            <div class="project-images">
-                <img src="img/graph_1.png" alt="Sesiones por usuario">
-                <img src="img/graph_2.png" alt="Conversión en días">
-                <img src="img/graph_8.png" alt="LTV">
-                <img src="img/graph_13.png" alt="Costo de adquisición por cliente">
-                <img src="img/graph_14.png" alt="Retorno a la inversión (ROMI)">
-            </div>
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Juan Pablo Cano</p>
+  </footer>
 
-            <p>Resultados Clave: El informe muestra resultados positivos generales, con un LTV mayor que el CAC, indicando ganancias por encima del margen del 50%. Las fuentes de marketing con mayor uso generan menor retorno, siendo la fuente 3 la de mayor costo y menor retorno, mientras que la fuente 10 tiene el menor costo y mayor retorno. Se destaca la necesidad de volumen de clientes, ya que la alta tasa de conversión del primer día (72.18%) sugiere que la prioridad debe ser atraer usuarios a la página. El ingreso promedio por venta es de $8.62, y el valor de vida promedio del cliente es de $18.92, lo que implica que realizan más de una compra.</p>
-
-            <a href="https://github.com/Juancanoanalyst/E-commerce-Data-Analysis" target="_blank" class="btn-project">Ver Repositorio</a>
-        </div>
-
-        <div class="project-card">
-            <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> Gym User Churn Prediction with Machine Learning</h3>
-            <p>Este proyecto utiliza técnicas de Machine Learning para predecir si un usuario de gimnasio cancelará su servicio. A través de análisis exploratorio de datos (EDA), ingeniería de características y entrenamiento de modelos de clasificación, el objetivo es proporcionar a la empresa una herramienta para anticipar la baja de clientes y facilitar la toma de decisiones proactiva para mejorar la retención.</p>
-            <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Jupyter Notebook, Análisis Estadístico.</p>
-
-            <div class="project-images">
-                <img src="img/1.png" alt="Contract Type vs. Retention">
-                <img src="img/4.png" alt="Correlation Heatmap">
-                <img src="img/2.png" alt="Tenure vs. Retention">
-                <img src="img/5.png" alt="ROC Curve - Random Forest">
-                <img src="img/6.png" alt="Confusion Matrix - Random Forest">
-            </div>
-
-            <p>Resultados Clave: El modelo Random Forest alcanzó una **precisión del 91%**, con un **recall del 81.3%** y una **precisión del 83.8%**. El AUC-ROC fue de **0.97**, indicando una excelente discriminación y una fuerte capacidad para identificar usuarios propensos a la baja, lo que permite estrategias de fidelización más efectivas. Se identificaron factores clave que predicen la retención de clientes y el modelo puede implementarse para señalar posibles cancelaciones futuras.</p>
-
-            <a href="https://github.com/Juancanoanalyst/Gym-User-Churn-Prediction" target="_blank" class="btn-project">Ver Repositorio</a>
-        </div>
-
-        <div class="project-card">
-            <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> Análisis de Datos de Telecomunicaciones</h3>
-            <p>Este proyecto se enfoca en el análisis exhaustivo de datos de telecomunicaciones para extraer insights valiosos y fundamentar la toma de decisiones estratégicas. A través de la manipulación y el análisis de los datos, buscamos optimizar operaciones, identificar áreas de mejora y potenciar el rendimiento general de los servicios de telecomunicaciones.</p>
-            <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Jupyter Notebook, Análisis Estadístico.</p>
-
-            <div class="project-images">
-                <img src="img/distribucion_operadores.png" alt="Distribución de Operadores Ineficaces">
-            </div>
-
-            <p>Resultados Clave: Se logró un preprocesamiento efectivo de los datos, asegurando la calidad del análisis. La función `identificar_operadores_a_deshabilitar` permite una evaluación objetiva del rendimiento y tiene la capacidad de identificar operadores ineficaces, siendo adaptable a diferentes umbrales de ineficacia. Los gráficos facilitan la interpretación de los resultados y se genera un dataset limpio para uso posterior.</p>
-
-            <a href="https://github.com/Juancanoanalyst/Telecom-Data-Analysis" target="_blank" class="btn-project">Ver Repositorio</a>
-        </div>
-
-        <div class="project-card">
-            <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> A/A Test for Food Products</h3>
-            <p>Este proyecto explora el comportamiento del consumidor en un experimento de prueba A/A para productos alimenticios. El objetivo principal es validar la consistencia de las variantes experimentales antes de pasar a una prueba A/B, asegurando que las diferencias observadas no se deban al azar.</p>
-            <p>Se realizó un análisis exhaustivo para validar la aleatorización del experimento y evaluar las diferencias estadísticas en el comportamiento entre grupos idénticos, estableciendo una base sólida para futuras pruebas A/B.</p>
-            <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Seaborn, Matplotlib, Scipy Stats), Análisis Estadístico.</p>
-
-            <div class="project-images">
-                </div>
-
-            <p>Resultados Clave: Se observaron tasas de conversión promedio en rangos como 0.45, 0.5 y 0.7 en los eventos analizados. Crucialmente, no se encontraron diferencias significativas entre los grupos, lo cual es exactamente lo que se espera de una prueba A/A exitosa, validando la aleatorización del experimento.</p>
-
-            <a href="https://github.com/Juancanoanalyst/Data-Analysis-A.A-Test-for-Food-Products" target="_blank" class="btn-project">Ver Repositorio</a>
-        </div>
-
-        </section>
-
-    <section id="contact" class="container">
-        <h2>Contacto</h2>
-        <p>¡Me encantaría saber de ti! No dudes en contactarme para oportunidades de colaboración, preguntas o simplemente para charlar sobre análisis de datos.</p>
-        <p><strong>Email:</strong> <a href="mailto:jpcano983@gmail.com">jpcano983@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank">linkedin.com/in/juan-pablo-cano-chaparro-1aa685209</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Juancanoanalyst" target="_blank">github.com/Juancanoanalyst</a></p>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="currentYear"></span> Juan Pablo Cano. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"></a>
-                <a href="https://github.com/Juancanoanalyst" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Script para actualizar el año en el footer automáticamente
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
