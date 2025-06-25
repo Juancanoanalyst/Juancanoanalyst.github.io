@@ -332,7 +332,7 @@
         <h2>Sobre Mí</h2>
         <div class="about-me">
             <div class="profile-pic">
-                <img src="images/profile.jpg" alt="Juan Pablo Cano">
+                <img src="img/profile.jpg" alt="Juan Pablo Cano">
             </div>
             <div class="bio-text">
                 <p>Soy un Ingeniero Industrial apasionado por el análisis de datos, enfocado en impulsar decisiones de negocio a través de insights. Con sólida experiencia en Python, Power BI, SQL y Tableau, mi interés se centra en la narración de datos y la automatización.</p>
@@ -384,24 +384,50 @@
         <h2>Proyectos Destacados</h2>
 
         <div class="project-card">
+            <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> Análisis de Datos de Plataforma de E-commerce</h3>
+            <p>Este proyecto analiza el comportamiento de los usuarios en una plataforma de comercio electrónico. Evalúa el flujo de navegación, las órdenes de compra y los costos por fuente de adquisición para generar métricas clave y fundamentar decisiones estratégicas.</p>
+            <p>Se implementan procesos de limpieza de datos (fechas, columnas, duplicados), enriquecimiento temporal (día, semana, mes), y cálculo de métricas de negocio como CAC (Costo de Adquisición de Cliente), tasa de conversión e ingresos mensuales.</p>
+            <p class="tech-list">Tecnologías: Python (Pandas, Matplotlib, Seaborn, NumPy, SciPy), Jupyter Notebook.</p>
+
+            <div class="project-images">
+                <img src="img/graph_1.png" alt="Sesiones por usuario">
+                <img src="img/graph_2.png" alt="Conversión en días">
+                <img src="img/graph_3.png" alt="Conversión en meses">
+                <img src="img/graph_4.png" alt="Tendencia compras">
+                <img src="img/graph_5.png" alt="Ingreso promedio por compra">
+                <img src="img/graph_6.png" alt="Distribución Ingresos">
+                <img src="img/graph_7.png" alt="Distribución Costos">
+                <img src="img/graph_8.png" alt="LTV">
+                <img src="img/graph_11.png" alt="Comparación de costos por fuente y mes primera compra">
+                <img src="img/graph_12.png" alt="Costo mensual por fuente">
+                <img src="img/graph_13.png" alt="Costo de adquisición por cliente">
+                <img src="img/graph_14.png" alt="Retorno a la inversión (ROMI)">
+            </div>
+
+            <p>Resultados Clave: El informe muestra resultados positivos generales, con un LTV mayor que el CAC, indicando ganancias por encima del margen del 50%. Las fuentes de marketing con mayor uso generan menor retorno, siendo la fuente 3 la de mayor costo y menor retorno, mientras que la fuente 10 tiene el menor costo y mayor retorno. Se destaca la necesidad de volumen de clientes, ya que la alta tasa de conversión del primer día (72.18%) sugiere que la prioridad debe ser atraer usuarios a la página. El ingreso promedio por venta es de $8.62, y el valor de vida promedio del cliente es de $18.92, lo que implica que realizan más de una compra.</p>
+
+            <a href="https://github.com/Juancanoanalyst/E-commerce-Data-Analysis" target="_blank" class="btn-project">Ver Repositorio</a>
+        </div>
+
+        <div class="project-card">
             <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> Gym User Churn Prediction with Machine Learning</h3>
             <p>Este proyecto utiliza técnicas de Machine Learning para predecir si un usuario de gimnasio cancelará su servicio. A través de análisis exploratorio de datos (EDA), ingeniería de características y entrenamiento de modelos de clasificación, el objetivo es proporcionar a la empresa una herramienta para anticipar la baja de clientes y facilitar la toma de decisiones proactiva para mejorar la retención.</p>
             <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Jupyter Notebook, Análisis Estadístico.</p>
 
             <div class="project-images">
-                <img src="images/1.png" alt="Contract Type vs. Retention">
-                <img src="images/3.png" alt="Weekly Visits Distribution">
-                <img src="images/4.png" alt="Correlation Heatmap">
-                <img src="images/2.png" alt="Tenure vs. Retention">
-                <img src="images/5.png" alt="ROC Curve - Random Forest">
-                <img src="images/6.png" alt="Confusion Matrix - Random Forest">
-                <img src="images/7.png" alt="Dendrogram - User Clusters">
+                <img src="img/1.png" alt="Contract Type vs. Retention">
+                <img src="img/3.png" alt="Weekly Visits Distribution">
+                <img src="img/4.png" alt="Correlation Heatmap">
+                <img src="img/2.png" alt="Tenure vs. Retention">
+                <img src="img/5.png" alt="ROC Curve - Random Forest">
+                <img src="img/6.png" alt="Confusion Matrix - Random Forest">
+                <img src="img/7.png" alt="Dendrogram - User Clusters">
             </div>
 
             <p>Resultados Clave: El modelo Random Forest alcanzó una **precisión del 91%**, con un **recall del 81.3%** y una **precisión del 83.8%**. El AUC-ROC fue de **0.97**, indicando una excelente discriminación y una fuerte capacidad para identificar usuarios propensos a la baja, lo que permite estrategias de fidelización más efectivas. Se identificaron factores clave que predicen la retención de clientes y el modelo puede implementarse para señalar posibles cancelaciones futuras.</p>
 
             <a href="https://github.com/Juancanoanalyst/Gym-User-Churn-Prediction" target="_blank" class="btn-project">Ver Repositorio</a>
-            </div>
+        </div>
 
         <div class="project-card">
             <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> Análisis de Datos de Telecomunicaciones</h3>
@@ -409,7 +435,7 @@
             <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Jupyter Notebook, Análisis Estadístico.</p>
 
             <div class="project-images">
-                <img src="images/distribucion_operadores.png" alt="Distribución de Operadores Ineficaces">
+                <img src="img/distribucion_operadores.png" alt="Distribución de Operadores Ineficaces">
             </div>
 
             <p>Resultados Clave: Se logró un preprocesamiento efectivo de los datos, asegurando la calidad del análisis. La función `identificar_operadores_a_deshabilitar` permite una evaluación objetiva del rendimiento y tiene la capacidad de identificar operadores ineficaces, siendo adaptable a diferentes umbrales de ineficacia. Los gráficos facilitan la interpretación de los resultados y se genera un dataset limpio para uso posterior.</p>
