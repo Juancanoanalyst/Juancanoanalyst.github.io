@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Pablo Cano - Analista de Datos</title>
+    <title>Juan Pablo Cano - Analista de Datos & Machine Learning</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos Generales */
         :root {
-            --primary-color: #007bff; /* Un azul vibrante */
-            --secondary-color: #6c757d; /* Gris oscuro para texto secundario */
-            --background-light: #f8f9fa; /* Fondo muy claro */
-            --text-dark: #343a40; /* Texto oscuro */
-            --accent-color: #28a745; /* Verde para detalles */
+            --primary-color: #1E3A5F; /* Azul marino profundo */
+            --secondary-color: #0056b3; /* Azul para enlaces y detalles */
+            --background-light: #F8F8F8; /* Fondo muy claro */
+            --text-dark: #333333; /* Texto oscuro */
+            --accent-color: #007BFF; /* Azul vibrante para acento */
         }
 
         body {
@@ -32,13 +32,13 @@
         }
 
         a {
-            color: var(--primary-color);
+            color: var(--secondary-color); /* Usamos el secondary para enlaces generales */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #0056b3; /* Un azul más oscuro al pasar el ratón */
+            color: var(--primary-color); /* Azul oscuro al pasar el ratón */
         }
 
         h1, h2, h3 {
@@ -118,13 +118,13 @@
         }
 
         .hero .btn:hover {
-            background-color: #218838;
+            background-color: var(--secondary-color);
         }
 
         /* Sección Sobre Mí */
         .about-me {
             display: flex;
-            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            flex-wrap: wrap;
             align-items: center;
             gap: 30px;
             margin-bottom: 40px;
@@ -132,22 +132,22 @@
 
         .about-me .profile-pic {
             flex: 1;
-            min-width: 250px; /* Asegura que la imagen no sea demasiado pequeña */
+            min-width: 250px;
             text-align: center;
         }
 
         .about-me .profile-pic img {
             width: 250px;
             height: 250px;
-            border-radius: 50%; /* Hace la imagen circular */
-            object-fit: cover; /* Asegura que la imagen se ajuste bien */
+            border-radius: 50%;
+            object-fit: cover;
             border: 5px solid var(--primary-color);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .about-me .bio-text {
             flex: 2;
-            min-width: 300px; /* Asegura que el texto no sea demasiado pequeño */
+            min-width: 300px;
         }
 
         /* Sección Habilidades */
@@ -182,7 +182,7 @@
             color: var(--primary-color);
         }
 
-        /* Sección Proyectos (Ejemplo - puedes replicarlo para más) */
+        /* Sección Proyectos */
         .project-card {
             background-color: #ffffff;
             border-radius: 8px;
@@ -199,6 +199,12 @@
         .project-card h3 {
             color: var(--primary-color);
             margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .project-card h3 img {
+            height: 30px; /* Ajusta el tamaño de los iconos de los títulos de proyectos */
         }
 
         .project-card .tech-list {
@@ -206,6 +212,37 @@
             color: var(--secondary-color);
             margin-top: 10px;
         }
+
+        .project-card .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-card .project-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .project-card .btn-project {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .project-card .btn-project:hover {
+            background-color: var(--secondary-color);
+        }
+
 
         /* Footer */
         footer {
@@ -220,11 +257,17 @@
         footer .social-links a {
             color: white;
             margin: 0 10px;
-            font-size: 1.5em;
+            font-size: 1.5em; /* Ajusta este valor si los iconos son muy grandes/pequeños */
             transition: color 0.3s ease;
         }
         footer .social-links a:hover {
-            color: var(--primary-color);
+            color: var(--accent-color); /* El color de acento al pasar el ratón */
+        }
+
+        footer .social-links img {
+            height: 30px; /* Tamaño fijo para los iconos SVG en el footer */
+            width: 30px;
+            vertical-align: middle;
         }
 
         /* Responsive Design */
@@ -235,6 +278,9 @@
             .hero h1 { font-size: 2.8em; }
             .hero p { font-size: 1.2em; }
             nav ul li { margin: 0 8px; }
+            .project-card .project-images {
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+            }
         }
 
         @media (max-width: 480px) {
@@ -249,54 +295,28 @@
             .about-me .profile-pic { margin-bottom: 20px; }
         }
 
-<style>
-    /* Estilos Generales */
-    :root {
-        --primary-color: #1E3A5F; /* Azul marino profundo */
-        --secondary-color: #0056b3; /* Azul para enlaces y detalles */
-        --background-light: #F8F8F8; /* Fondo muy claro */
-        --text-dark: #333333; /* Texto oscuro */
-        --accent-color: #007BFF; /* Azul vibrante para acento */
-        /* Si prefieres un verde como acento, usa: --accent-color: #28a745; */
-    }
-    /* ... el resto de tu CSS ... */
-    /* Asegúrate también de actualizar: */
-    .hero {
-        background-color: var(--primary-color); /* Asegura que el hero use el nuevo azul oscuro */
-        color: white;
-        text-align: center;
-        padding: 80px 20px;
-        margin-bottom: 30px;
-    }
-
-    .hero .btn {
-        background-color: var(--accent-color); /* El botón de "Explorar Proyectos" */
-        color: white;
-        padding: 15px 30px;
-        border-radius: 5px;
-        font-weight: 700;
-        transition: background-color 0.3s ease;
-    }
-
-    .hero .btn:hover {
-        background-color: #0056b3; /* Un tono más oscuro del acento, o el secondary-color */
-    }
-
-    /* Y el footer para que use el text-dark */
-    footer {
-        text-align: center;
-        padding: 30px 20px;
-        margin-top: 50px;
-        background-color: var(--text-dark); /* Ahora el footer será gris oscuro */
-        color: white;
-        font-size: 0.9em;
-    }
-</style>
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Juan Pablo Cano</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <section id="home" class="hero">
         <div class="container">
-            <h1>Data Analyst</h1>
-            <p>¡Convirtiendo datos en decisiones de negocio!</p>
+            <h1>Data Analyst & Machine Learning Enthusiast</h1>
+            <p>¡Convirtiendo datos en decisiones de negocio y soluciones inteligentes!</p>
             <a href="#projects" class="btn">Explorar Proyectos</a>
         </div>
     </section>
@@ -305,8 +325,8 @@
         <h2>Sobre Mí</h2>
         <div class="about-me">
             <div class="profile-pic">
-                <img src="https://via.placeholder.com/250" alt="Juan Pablo Cano">
-                </div>
+                <img src="img/profile.jpg" alt="Juan Pablo Cano">
+            </div>
             <div class="bio-text">
                 <p>Soy un Ingeniero Industrial apasionado por el análisis de datos, enfocado en impulsar decisiones de negocio a través de insights. Con sólida experiencia en Python, Power BI, SQL y Tableau, mi interés se centra en la narración de datos y la automatización.</p>
                 <p>Actualmente resido en Bogotá, Colombia, y estoy abierto a oportunidades remotas. Me encuentro trabajando en proyectos personales que involucran machine learning, desarrollo de dashboards y análisis de negocio.</p>
@@ -346,30 +366,53 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
                 <p>Jupyter Notebooks</p>
             </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="Machine Learning">
+                <p>Machine Learning</p>
+            </div>
         </div>
     </section>
 
     <section id="projects" class="container">
         <h2>Proyectos Destacados</h2>
-        <div class="project-card">
-            <h3>Análisis de Tendencias de Ventas</h3>
-            <p>Proyecto que utiliza Python (Pandas, Matplotlib) y SQL para analizar patrones de ventas en un comercio minorista, identificando productos de alto rendimiento y épocas clave. Se generaron dashboards interactivos en Power BI.</p>
-            <p class="tech-list">Tecnologías: Python, SQL, Power BI, Excel</p>
-            <a href="https://github.com/Juancanoanalyst/TuProyectoDeVentas" target="_blank">Ver Repositorio</a>
-        </div>
 
         <div class="project-card">
-            <h3>Dashboard de Retención de Clientes</h3>
-            <p>Creación de un dashboard en Tableau para visualizar la tasa de retención de clientes, segmentando por demografía y comportamiento. Se identificaron factores clave que influyen en la lealtad del cliente.</p>
-            <p class="tech-list">Tecnologías: Tableau, SQL</p>
-            <a href="https://github.com/Juancanoanalyst/TuProyectoDeRetencion" target="_blank">Ver Repositorio</a>
+            <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> Gym User Churn Prediction with Machine Learning</h3>
+            <p>Este proyecto utiliza técnicas de Machine Learning para predecir si un usuario de gimnasio cancelará su servicio. A través de análisis exploratorio de datos (EDA), ingeniería de características y entrenamiento de modelos de clasificación, el objetivo es proporcionar a la empresa una herramienta para anticipar la baja de clientes y facilitar la toma de decisiones proactiva para mejorar la retención.</p>
+            <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn), Jupyter Notebook, Análisis Estadístico.</p>
+
+            <div class="project-images">
+                <img src="img/projects/churn-prediction/1.png" alt="Contract Type vs. Retention">
+                <img src="img/projects/churn-prediction/3.png" alt="Weekly Visits Distribution">
+                <img src="img/projects/churn-prediction/4.png" alt="Correlation Heatmap">
+                <img src="img/projects/churn-prediction/2.png" alt="Tenure vs. Retention">
+                <img src="img/projects/churn-prediction/5.png" alt="ROC Curve - Random Forest">
+                <img src="img/projects/churn-prediction/6.png" alt="Confusion Matrix - Random Forest">
+                <img src="img/projects/churn-prediction/7.png" alt="Dendrogram - User Clusters">
+            </div>
+
+            <p>Resultados Clave: El modelo Random Forest alcanzó una **precisión del 91%**, con un **recall del 81.3%** y una **precisión del 83.8%**. El AUC-ROC fue de **0.97**, indicando una excelente discriminación y una fuerte capacidad para identificar usuarios propensos a la baja, lo que permite estrategias de fidelización más efectivas. Se identificaron factores clave que predicen la retención de clientes y el modelo puede implementarse para señalar posibles cancelaciones futuras.</p>
+
+            <a href="https://github.com/Juancanoanalyst/Gym-User-Churn-Prediction" target="_blank" class="btn-project">Ver Repositorio</a>
+            </div>
+
+        <div class="project-card">
+            <h3><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" /> A/A Test for Food Products</h3>
+            <p>Este proyecto explora el comportamiento del consumidor en un experimento de prueba A/A para productos alimenticios. El objetivo principal es validar la consistencia de las variantes experimentales antes de pasar a una prueba A/B, asegurando que las diferencias observadas no se deban al azar.</p>
+            <p>Se realizó un análisis exhaustivo para validar la aleatorización del experimento y evaluar las diferencias estadísticas en el comportamiento entre grupos idénticos, estableciendo una base sólida para futuras pruebas A/B.</p>
+            <p class="tech-list">Tecnologías: Python (Pandas, NumPy, Seaborn, Matplotlib, Scipy Stats), Análisis Estadístico.</p>
+
+            <p>Resultados Clave: Se observaron tasas de conversión promedio en rangos como 0.45, 0.5 y 0.7 en los eventos analizados. Crucialmente, no se encontraron diferencias significativas entre los grupos, lo cual es exactamente lo que se espera de una prueba A/A exitosa, validando la aleatorización del experimento.</p>
+
+            <a href="https://github.com/Juancanoanalyst/Data-Analysis-A.A-Test-for-Food-Products" target="_blank" class="btn-project">Ver Repositorio</a>
         </div>
+
         </section>
 
     <section id="contact" class="container">
         <h2>Contacto</h2>
         <p>¡Me encantaría saber de ti! No dudes en contactarme para oportunidades de colaboración, preguntas o simplemente para charlar sobre análisis de datos.</p>
-        <p><strong>Email:</strong> <a href="mailto:jcano983@gmail.com">jcano983@gmail.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:jpcano983@gmail.com">jpcano983@gmail.com</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank">linkedin.com/in/juan-pablo-cano-chaparro-1aa685209</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/Juancanoanalyst" target="_blank">github.com/Juancanoanalyst</a></p>
     </section>
@@ -378,9 +421,9 @@
         <div class="container">
             <p>&copy; <span id="currentYear"></span> Juan Pablo Cano. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30"></a>
-                <a href="https://github.com/Juancanoanalyst" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30"></a>
-                </div>
+                <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"></a>
+                <a href="https://github.com/Juancanoanalyst" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"></a>
+            </div>
         </div>
     </footer>
 
