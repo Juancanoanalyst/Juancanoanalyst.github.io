@@ -249,23 +249,49 @@
             .about-me .profile-pic { margin-bottom: 20px; }
         }
 
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">Juan Pablo Cano</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<style>
+    /* Estilos Generales */
+    :root {
+        --primary-color: #1E3A5F; /* Azul marino profundo */
+        --secondary-color: #0056b3; /* Azul para enlaces y detalles */
+        --background-light: #F8F8F8; /* Fondo muy claro */
+        --text-dark: #333333; /* Texto oscuro */
+        --accent-color: #007BFF; /* Azul vibrante para acento */
+        /* Si prefieres un verde como acento, usa: --accent-color: #28a745; */
+    }
+    /* ... el resto de tu CSS ... */
+    /* Asegúrate también de actualizar: */
+    .hero {
+        background-color: var(--primary-color); /* Asegura que el hero use el nuevo azul oscuro */
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        margin-bottom: 30px;
+    }
+
+    .hero .btn {
+        background-color: var(--accent-color); /* El botón de "Explorar Proyectos" */
+        color: white;
+        padding: 15px 30px;
+        border-radius: 5px;
+        font-weight: 700;
+        transition: background-color 0.3s ease;
+    }
+
+    .hero .btn:hover {
+        background-color: #0056b3; /* Un tono más oscuro del acento, o el secondary-color */
+    }
+
+    /* Y el footer para que use el text-dark */
+    footer {
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 50px;
+        background-color: var(--text-dark); /* Ahora el footer será gris oscuro */
+        color: white;
+        font-size: 0.9em;
+    }
+</style>
 
     <section id="home" class="hero">
         <div class="container">
@@ -343,7 +369,7 @@
     <section id="contact" class="container">
         <h2>Contacto</h2>
         <p>¡Me encantaría saber de ti! No dudes en contactarme para oportunidades de colaboración, preguntas o simplemente para charlar sobre análisis de datos.</p>
-        <p><strong>Email:</strong> <a href="mailto:jcanp93@gmail.com">jcanp93@gmail.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:jcano983@gmail.com">jcano983@gmail.com</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank">linkedin.com/in/juan-pablo-cano-chaparro-1aa685209</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/Juancanoanalyst" target="_blank">github.com/Juancanoanalyst</a></p>
     </section>
