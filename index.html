@@ -3,26 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primera Página GitHub</title>
+    <title>Juan Pablo Cano - Analista de Datos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos Generales */
+        :root {
+            --primary-color: #007bff; /* Un azul vibrante */
+            --secondary-color: #6c757d; /* Gris oscuro para texto secundario */
+            --background-light: #f8f9fa; /* Fondo muy claro */
+            --text-dark: #343a40; /* Texto oscuro */
+            --accent-color: #28a745; /* Verde para detalles */
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Desplazamiento suave */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3; /* Un azul más oscuro al pasar el ratón */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        h1 { font-size: 2.8em; text-align: center; margin-bottom: 10px; }
+        h2 { font-size: 2.2em; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-top: 40px; }
+        h3 { font-size: 1.8em; color: var(--text-dark); margin-top: 30px;}
+
+        /* Header (Encabezado) */
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e6ea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             text-align: center;
         }
-        h1 {
-            color: #0056b3;
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-color);
         }
-        p {
-            font-size: 1.1em;
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
         }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            font-weight: 700;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sección Héroe (Bienvenida) */
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Sección Sobre Mí */
+        .about-me {
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .about-me .profile-pic {
+            flex: 1;
+            min-width: 250px; /* Asegura que la imagen no sea demasiado pequeña */
+            text-align: center;
+        }
+
+        .about-me .profile-pic img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%; /* Hace la imagen circular */
+            object-fit: cover; /* Asegura que la imagen se ajuste bien */
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .about-me .bio-text {
+            flex: 2;
+            min-width: 300px; /* Asegura que el texto no sea demasiado pequeño */
+        }
+
+        /* Sección Habilidades */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-item img {
+            max-width: 60px;
+            margin-bottom: 10px;
+        }
+
+        .skill-item p {
+            font-weight: 600;
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        /* Sección Proyectos (Ejemplo - puedes replicarlo para más) */
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 25px;
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .project-card .tech-list {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            background-color: var(--text-dark);
+            color: white;
+            font-size: 0.9em;
+        }
+
+        footer .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+        footer .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.8em; }
+            .hero { padding: 60px 20px; }
+            .hero h1 { font-size: 2.8em; }
+            .hero p { font-size: 1.2em; }
+            nav ul li { margin: 0 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            .hero { padding: 40px 15px; }
+            .hero h1 { font-size: 2.2em; }
+            .hero p { font-size: 1em; }
+            nav ul li { display: block; margin: 10px 0; }
+            .about-me { flex-direction: column; text-align: center; }
+            .about-me .profile-pic { margin-bottom: 20px; }
+        }
+
     </style>
 </head>
 <body>
-    <h1>¡Hola, mundo desde Juancanoanalyst.github.io!</h1>
-    <p>¡Esta es mi primera página web usando GitHub Pages!</p>
-    <p>Estoy aprendiendo a crear sitios web.</p>
+    <header>
+        <div class="container">
+            <div class="logo">Juan Pablo Cano</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Data Analyst</h1>
+            <p>¡Convirtiendo datos en decisiones de negocio!</p>
+            <a href="#projects" class="btn">Explorar Proyectos</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>Sobre Mí</h2>
+        <div class="about-me">
+            <div class="profile-pic">
+                <img src="https://via.placeholder.com/250" alt="Juan Pablo Cano">
+                </div>
+            <div class="bio-text">
+                <p>Soy un Ingeniero Industrial apasionado por el análisis de datos, enfocado en impulsar decisiones de negocio a través de insights. Con sólida experiencia en Python, Power BI, SQL y Tableau, mi interés se centra en la narración de datos y la automatización.</p>
+                <p>Actualmente resido en Bogotá, Colombia, y estoy abierto a oportunidades remotas. Me encuentro trabajando en proyectos personales que involucran machine learning, desarrollo de dashboards y análisis de negocio.</p>
+                <p>Mi filosofía es: "Transformo datos en decisiones". Creo firmemente en el poder de los datos para respaldar y transformar organizaciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL">
+                <p>SQL (PostgreSQL)</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-plain.svg" alt="Power BI">
+                <p>Power BI</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg" alt="Tableau">
+                <p>Tableau</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                <p>Git & GitHub</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-plain.svg" alt="Excel">
+                <p>Excel</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
+                <p>Jupyter Notebooks</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Proyectos Destacados</h2>
+        <div class="project-card">
+            <h3>Análisis de Tendencias de Ventas</h3>
+            <p>Proyecto que utiliza Python (Pandas, Matplotlib) y SQL para analizar patrones de ventas en un comercio minorista, identificando productos de alto rendimiento y épocas clave. Se generaron dashboards interactivos en Power BI.</p>
+            <p class="tech-list">Tecnologías: Python, SQL, Power BI, Excel</p>
+            <a href="https://github.com/Juancanoanalyst/TuProyectoDeVentas" target="_blank">Ver Repositorio</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Dashboard de Retención de Clientes</h3>
+            <p>Creación de un dashboard en Tableau para visualizar la tasa de retención de clientes, segmentando por demografía y comportamiento. Se identificaron factores clave que influyen en la lealtad del cliente.</p>
+            <p class="tech-list">Tecnologías: Tableau, SQL</p>
+            <a href="https://github.com/Juancanoanalyst/TuProyectoDeRetencion" target="_blank">Ver Repositorio</a>
+        </div>
+        </section>
+
+    <section id="contact" class="container">
+        <h2>Contacto</h2>
+        <p>¡Me encantaría saber de ti! No dudes en contactarme para oportunidades de colaboración, preguntas o simplemente para charlar sobre análisis de datos.</p>
+        <p><strong>Email:</strong> <a href="mailto:jcanp93@gmail.com">jcanp93@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank">linkedin.com/in/juan-pablo-cano-chaparro-1aa685209</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Juancanoanalyst" target="_blank">github.com/Juancanoanalyst</a></p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Juan Pablo Cano. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/juan-pablo-cano-chaparro-1aa685209/" target="_blank" title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30"></a>
+                <a href="https://github.com/Juancanoanalyst" target="_blank" title="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30"></a>
+                </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para actualizar el año en el footer automáticamente
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
